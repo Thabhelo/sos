@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { auth } from '../firebase'; // Adjust path if necessary
+import { auth } from '../app/firebase'; // Adjust path if necessary
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { useRouter } from 'next/navigation'; // Use router for navigation
 
