@@ -1,10 +1,10 @@
 "use client";
 import React, { useState } from "react";
 import ContactsPage from "./components/ContactsPage";
-import ProfilePage from "./components/Profilepage";
+import ProfilePage from "./components/ProfilePage";
 import SettingsPage from "./components/SettingsPage";
 import 'font-awesome/css/font-awesome.min.css';
-
+import Link from 'next/link';
 
 function MainComponent() {
   const [emergency, setEmergency] = React.useState(false);
@@ -206,6 +206,7 @@ function MainComponent() {
   );
 
   return (
+    
     <div className="flex flex-col h-screen bg-white">
       <div className="flex-1 overflow-hidden relative">
         <div className="absolute inset-0 overflow-y-auto">
@@ -274,8 +275,8 @@ function MainComponent() {
                             className="w-48 h-48 rounded-full text-white font-bold text-xl shadow-lg relative z-10 bg-red-500 animate-pulse"
                           >
                             <span>SOS</span>
-                            <span className="block text-sm">
-                              Press 3 seconds
+                            <span className="block text-sm mt-2">
+                              Press for help
                             </span>
                           </button>
                           <span className="absolute inset-0 rounded-full bg-red-400 animate-ping"></span>
@@ -284,6 +285,7 @@ function MainComponent() {
                         <h3 className="text-xl font-semibold mb-4 mt-4">
                           What's your emergency?
                         </h3>
+
                         <div className="grid grid-cols-3 gap-4 mb-8">
                           {[
                             {
