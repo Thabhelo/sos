@@ -2,20 +2,20 @@
 
 
 <p align="center">
-  <img src="./imgs/qz766z83.bmp" width=50%> </img>
+  <img src="./public/imgs/qz766z83.bmp" width=50%> </img>
 </p>
 
 
 <p align="center">
-  <img src="./imgs/f2jw9r04.bmp" width=50%> </img>
+  <img src="./public/imgs/f2jw9r04.bmp" width=50%> </img>
 </p>
 
 <p align="center">
-  <img src="./imgs/ojskirln.bmp" width=50%> </img>
+  <img src="./public/imgs/ojskirln.bmp" width=50%> </img>
 </p>
 
 <p align="center">
-  <img src="./imgs/xngixjxf.bmp" width=50%> </img>
+  <img src="./public/imgs/xngixjxf.bmp" width=50%> </img>
 </p>
 
 ## Table of Contents
