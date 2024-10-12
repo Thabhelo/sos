@@ -57,10 +57,10 @@ The SOS Emergency App is designed to provide quick and reliable assistance in cr
 
 ## Technologies Used
 
-- **Mobile Framework**: (e.g., React Native, Flutter)
-- **Backend Services**: (e.g., Firebase, Node.js)
-- **Database**: (e.g., MongoDB, Firebase Firestore)
-- **APIs**: (e.g., Geolocation API, Health Monitoring API)
+- **Mobile Framework**: Next.js
+- **Backend Services**: Firebase, Node.js
+- **Database**: Firebase Firestore
+- **APIs**: Geolocation API, Health Monitoring API, SMS sending API
 
 ## Installation
 
