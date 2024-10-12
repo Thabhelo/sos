@@ -1,5 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import ContactsPage from "./components/ContactsPage";
+import ProfilePage from "./components/Profilepage";
+import SettingsPage from "./components/SettingsPage";
+
 
 function MainComponent() {
   const [emergency, setEmergency] = React.useState(false);
@@ -68,7 +72,8 @@ function MainComponent() {
     </div>
   );
   const [currentPage, setCurrentPage] = React.useState("home");
-  const [searchQuery, setSearchQuery] = React.useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+
   const favoriteContacts = [
     {
       name: "911",
@@ -117,259 +122,12 @@ function MainComponent() {
     { name: "Ivy Chen", number: "+1 234-567-8909", icon: "fa-star" },
     { name: "Jack White", number: "+1 234-567-8910", icon: "fa-user" },
   ];
+
   const filteredContacts = allContacts.filter((contact) =>
     contact.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const renderMyCirclePage = () => (
-    <div className="flex-1 overflow-y-auto">
-      <div className="p-4 bg-gray-100">
-        <h2 className="text-2xl font-bold mb-4">My Circle</h2>
-        <div className="flex flex-wrap justify-between mb-4 space-x-2">
-          {favoriteContacts.map((contact, index) => (
-            <div
-              key={index}
-              className={`w-16 h-16 ${contact.bg} ${contact.textColor} rounded-full flex flex-col items-center justify-center`}
-            >
-              <i className={`fas ${contact.icon} text-xl mb-1`}></i>
-              <span className="text-xs font-semibold">{contact.name}</span>
-            </div>
-          ))}
-          <div className="w-16 h-16 bg-gray-200 rounded-full flex flex-col items-center justify-center">
-            <i className="fas fa-plus text-xl mb-1 text-gray-600"></i>
-            <span className="text-xs font-semibold text-gray-600">Add</span>
-          </div>
-        </div>
-        <div className="relative mb-4">
-          <input
-            type="text"
-            placeholder="Search contacts"
-            className="w-full p-2 pl-8 rounded-full border border-gray-300"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-          <i className="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-        </div>
-      </div>
-      <div className="flex-grow overflow-y-auto">
-        {filteredContacts.map((contact, index) => (
-          <div
-            key={index}
-            className="flex items-center justify-between p-4 border-b border-gray-200"
-          >
-            <div className="flex items-center">
-              <i
-                className={`fas ${contact.icon} text-xl text-gray-500 mr-3`}
-              ></i>
-              <div>
-                <h3 className="font-semibold">{contact.name}</h3>
-                <p className="text-sm text-gray-600">{contact.number}</p>
-              </div>
-            </div>
-            <div className="flex space-x-2">
-              <button className="p-2 bg-green-500 text-white rounded-full">
-                <i className="fas fa-phone"></i>
-              </button>
-              <button className="p-2 bg-blue-500 text-white rounded-full">
-                <i className="fas fa-comment"></i>
-              </button>
-              <button className="p-2 bg-yellow-500 text-white rounded-full">
-                <i className="fas fa-star"></i>
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-
-  const renderSettingsPage = () => (
-    <div className="flex-1 overflow-y-auto bg-gray-100">
-      <h2 className="text-2xl font-bold p-4 bg-white text-center">SETTINGS</h2>
-      <div className="p-4">
-        <SettingsSection title="Notifications">
-          <ToggleSetting label="Push Notifications" />
-          <ToggleSetting label="Alert Sound" />
-          <ToggleSetting label="Vibrations" />
-        </SettingsSection>
-        <SettingsSection title="Emergency Triggers">
-          <div className="flex items-center justify-between">
-            <span>Double-Tap Action</span>
-            <i className="fas fa-phone text-blue-500"></i>
-          </div>
-          <ToggleSetting label="Audio Recording" />
-        </SettingsSection>
-        <SettingsSection title="Location Settings">
-          <ToggleSetting label="Share Location" />
-        </SettingsSection>
-        <SettingsSection title="Health Monitoring">
-          <ToggleSetting label="Heart Rate Alerts" />
-        </SettingsSection>
-        <SettingsSection title="Account Settings">
-          <button className="w-full text-left py-2">Change Password</button>
-          <button
-            className="w-full text-left py-2"
-            onClick={() => setCurrentPage("myCircle")}
-          >
-            Manage Trusted Contacts
-          </button>
-        </SettingsSection>
-        <SettingsSection title="App Settings">
-          <div className="flex items-center justify-between">
-            <span>Theme</span>
-            <select className="bg-white border rounded p-1">
-              <option>Light</option>
-              <option>Dark</option>
-            </select>
-          </div>
-          <div className="flex items-center justify-between mt-2">
-            <span>Language</span>
-            <select className="bg-white border rounded p-1">
-              <option>English</option>
-              <option>Spanish</option>
-              <option>French</option>
-            </select>
-          </div>
-        </SettingsSection>
-        <SettingsSection title="Help & Support">
-          <button className="w-full text-left py-2">FAQ</button>
-          <button className="w-full text-left py-2">Contact Support</button>
-        </SettingsSection>
-      </div>
-    </div>
-  );
-
-  const renderProfilePage = () => (
-    <div className="flex-1 overflow-y-auto bg-gray-100">
-      <h2 className="text-2xl font-bold p-4 bg-white text-center">PROFILE</h2>
-      <div className="p-4">
-        <ProfileSection title="User Information">
-          <div className="flex items-center mb-4">
-            <div className="w-24 h-24 bg-gray-300 rounded-full mr-4 flex items-center justify-center">
-              <i className="fas fa-user text-4xl text-gray-500"></i>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">Thabhelo Duve</h3>
-              <p className="text-gray-600">+1 234-567-8910</p>
-            </div>
-          </div>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-full w-full mb-4">
-            Change Profile Picture
-          </button>
-        </ProfileSection>
-        <ProfileSection title="Emergency Contact Information">
-          <button
-            className="bg-green-500 text-white px-4 py-2 rounded-full w-full mb-4"
-            onClick={() => setCurrentPage("myCircle")}
-          >
-            Add Emergency Contact
-          </button>
-          <div className="space-y-3">
-            {favoriteContacts.map((contact, index) => (
-              <div key={index} className="flex items-center justify-between">
-                <div className="flex items-center">
-                  <i
-                    className={`fas ${contact.icon} ${contact.textColor} mr-2`}
-                  ></i>
-                  <span>{contact.name}</span>
-                </div>
-                <div>
-                  <button className="text-blue-500 mr-2">Edit</button>
-                  <button className="text-red-500">Remove</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </ProfileSection>
-        <ProfileSection title="Health Information">
-          <InputField
-            label="Medical Conditions"
-            placeholder="Enter medical conditions"
-          />
-          <InputField label="Allergies" placeholder="Enter allergies" />
-          <InputField
-            label="Medications"
-            placeholder="Enter current medications"
-          />
-        </ProfileSection>
-        <ProfileSection title="Account Settings">
-          <button className="w-full text-left py-2">Change Password</button>
-          <ToggleSetting label="Two-Factor Authentication" />
-        </ProfileSection>
-        <ProfileSection title="App Settings">
-          <button
-            className="w-full text-left py-2"
-            onClick={() => setCurrentPage("settings")}
-          >
-            Notification Preferences
-          </button>
-          <div className="flex items-center justify-between mt-2">
-            <span>Language</span>
-            <select className="bg-white border rounded p-1">
-              <option>English</option>
-              <option>Spanish</option>
-              <option>French</option>
-              <option>Zulu</option>
-              <option>Igbo</option>
-            </select>
-          </div>
-        </ProfileSection>
-        <ProfileSection title="Help & Support">
-          <button className="w-full text-left py-2">Help Center</button>
-          <button className="w-full text-left py-2">Contact Support</button>
-        </ProfileSection>
-        <button className="bg-red-500 text-white px-4 py-2 rounded-full w-full mt-4">
-          Logout
-        </button>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-full w-full mt-4">
-          Connect Apple Watch
-        </button>
-      </div>
-    </div>
-  );
-
-  const SettingsSection = ({ title, children }) => (
-    <div className="mb-6">
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <div className="bg-white rounded-lg p-4 shadow">{children}</div>
-    </div>
-  );
-  const ToggleSetting = ({ label }) => (
-    <div className="flex items-center justify-between py-2">
-      <span>{label}</span>
-      <div className="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
-        <input
-          type="checkbox"
-          name={label}
-          id={label}
-          className="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-        />
-        <label
-          htmlFor={label}
-          className="toggle-label block overflow-hidden h-6 rounded-full bg-gray-300 cursor-pointer"
-        ></label>
-      </div>
-    </div>
-  );
-  const ProfileSection = ({ title, children }) => (
-    <div className="mb-6">
-      <h3 className="text-lg font-semibold mb-2">{title}</h3>
-      <div className="bg-white rounded-lg p-4 shadow">{children}</div>
-    </div>
-  );
-  const InputField = ({ label, placeholder }) => (
-    <div className="mb-4">
-      <label className="block text-sm font-medium text-gray-700 mb-1">
-        {label}
-      </label>
-      <input
-        type="text"
-        placeholder={placeholder}
-        className="w-full p-2 border rounded-md"
-      />
-    </div>
-  );
-
+ 
   const handleHomeClick = () => {
     setCurrentPage("home");
     setEmergency(false);
@@ -613,9 +371,9 @@ function MainComponent() {
                   </div>
                 </div>
               )}
-              {currentPage === "myCircle" && renderMyCirclePage()}
-              {currentPage === "settings" && renderSettingsPage()}
-              {currentPage === "profile" && renderProfilePage()}
+              {currentPage === "myCircle" && <ContactsPage/>}
+              {currentPage === "settings" && <SettingsPage/>}
+              {currentPage === "profile" && <ProfilePage/>}
             </div>
           </div>
         </div>
