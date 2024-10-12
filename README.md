@@ -1,17 +1,22 @@
 # SOS Emergency App
 
 
-<img src="https://github.com/user-attachments/assets/f6d94c3b-5e83-49ca-bd6c-401ce79024a2" width=50%> </img>
+<p align="center">
+  <img src="./imgs/qz766z83.bmp" width=50%> </img>
+</p>
 
 
-<img src="https://github.com/user-attachments/assets/6999d12e-e203-498b-9d63-6ca5b1f1ec8e" width=50%> </img>
+<p align="center">
+  <img src="./imgs/f2jw9r04.bmp" width=50%> </img>
+</p>
 
+<p align="center">
+  <img src="./imgs/ojskirln.bmp" width=50%> </img>
+</p>
 
-<img src="https://github.com/user-attachments/assets/0e967171-a5cc-421b-969d-ac86b17547f9" width=50%> </img>
-
-
-<img src="https://github.com/user-attachments/assets/b98e3a6f-8f8a-4336-9ccf-b8fffe20d8b8" width=50%> </img>
-
+<p align="center">
+  <img src="./imgs/xngixjxf.bmp" width=50%> </img>
+</p>
 ## Table of Contents
 - [Introduction](#introduction)
 - [Features](#features)
