@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import ContactsPage from "./components/ContactsPage";
 import ProfilePage from "./components/Profilepage";
 import SettingsPage from "./components/SettingsPage";
+import 'font-awesome/css/font-awesome.min.css';
 
 
 function MainComponent() {
