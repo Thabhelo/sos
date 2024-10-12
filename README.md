@@ -1,12 +1,16 @@
 # SOS Emergency App
 
-![CA1F8196-4C68-4E46-8075-8EF795B862EA_1_201_a](https://github.com/user-attachments/assets/f6d94c3b-5e83-49ca-bd6c-401ce79024a2)
 
-![EB4D5961-DC3B-4110-909E-1D17E05832FA_1_201_a](https://github.com/user-attachments/assets/6999d12e-e203-498b-9d63-6ca5b1f1ec8e)
+<img src="https://github.com/user-attachments/assets/f6d94c3b-5e83-49ca-bd6c-401ce79024a2" width=50%> </img>
 
-![C25AEA00-B3F5-4FA8-8650-2AF2FFADF5D4_1_201_a](https://github.com/user-attachments/assets/0e967171-a5cc-421b-969d-ac86b17547f9)
 
-![8CA48808-3775-4131-BD5F-DEDF050AA9C7_1_201_a](https://github.com/user-attachments/assets/b98e3a6f-8f8a-4336-9ccf-b8fffe20d8b8)
+<img src="https://github.com/user-attachments/assets/6999d12e-e203-498b-9d63-6ca5b1f1ec8e" width=50%> </img>
+
+
+<img src="https://github.com/user-attachments/assets/0e967171-a5cc-421b-969d-ac86b17547f9" width=50%> </img>
+
+
+<img src="https://github.com/user-attachments/assets/b98e3a6f-8f8a-4336-9ccf-b8fffe20d8b8" width=50%> </img>
 
 ## Table of Contents
 - [Introduction](#introduction)
