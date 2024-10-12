@@ -176,6 +176,7 @@ function MainComponent() {
   );
 
   return (
+    
     <div className="flex flex-col h-screen bg-white">
       <div className="flex-1 overflow-hidden relative">
         <div className="absolute inset-0 overflow-y-auto">
